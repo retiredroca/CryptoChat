@@ -629,13 +629,22 @@
     shadow.getElementById('cc-recip-select').addEventListener('change', () => checkSendReady(shadow));
     shadow.getElementById('cc-textarea').addEventListener('input', () => checkSendReady(shadow));
 
-    shadow.getElementById('cc-textarea').addEventListener('keydown', e => {
-      if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
-        const btn = shadow.getElementById('cc-send');
-        if (!btn.disabled) btn.click();
-      }
-    });
+shadow.getElementById('cc-textarea').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    const btn = shadow.getElementById('cc-send');
+    if (!btn.disabled) btn.click();
+  }
+  e.stopPropagation(); // Add this line
+});
+
+shadow.getElementById('cc-textarea').addEventListener('keyup', e => {
+  e.stopPropagation(); // Add this line
+});
+
+shadow.getElementById('cc-textarea').addEventListener('keypress', e => {
+  e.stopPropagation(); // Add this line
+});
 
     shadow.getElementById('cc-send').addEventListener('click', () => doEncrypt(shadow));
 
