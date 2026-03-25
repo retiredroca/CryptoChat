@@ -1,6 +1,6 @@
 # CryptoChat
 
-> End-to-end encrypted messaging layered on top of any text entry on any site. only your recipients can read.
+> End-to-end encrypted messaging layered on top of any text entry on any site. only recipients within your circle of trust can read.
 
 Works in **Chrome, Brave, Edge, and Firefox**. No accounts, no servers, no dependencies. All crypto runs in your browser using the native Web Crypto API.
 
